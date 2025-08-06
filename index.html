@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>3D 模型展示</title>
+    <title>3D 模型展示 + AR</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
       body {
@@ -21,14 +21,17 @@
     </style>
   </head>
   <body>
-    <!-- 這裡換成你自己的模型路徑 -->
+    <!-- 模型檔案：請將 Zebra.glb 與 Zebra.usdz 上傳到同一資料夾 -->
     <model-viewer
-      src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+      src="Zebra.glb"              <!-- Android 與一般瀏覽器使用 -->
+      ios-src="Zebra.usdz"         <!-- iOS Safari 專用 AR 模型格式 -->
       alt="3D 模型"
       auto-rotate
       camera-controls
-      touch-action="pan-y"
-      ar
+      ar                            <!-- 啟用 AR 功能 -->
+      ar-modes="scene-viewer quick-look webxr"  <!-- 支援 Android / iOS / WebXR -->
+      shadow-intensity="1"
+      environment-image="neutral"   <!-- 環境光設定 -->
     >
     </model-viewer>
   </body>
