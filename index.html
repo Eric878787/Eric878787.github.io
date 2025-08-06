@@ -61,18 +61,21 @@
   <header>3D 模型展示選單</header>
   <div class="thumbnails">
     <div class="thumbnail" onclick="loadModel('Zebra')">
-      <img src="zebra.jpg" alt="Zebra">
+      <img src="Zebra.jpg" alt="Zebra">
     </div>
     <div class="thumbnail" onclick="loadModel('Giraffe')">
-      <img src="car.jpg" alt="Car">
+      <img src="Giraffe.jpg" alt="Giraffe">
+    </div>
+    <div class="thumbnail" onclick="loadModel('Elephant')">
+      <img src="Elephant.jpg" alt="Elephant">
     </div>
   </div>
 
   <model-viewer
     id="viewer"
-    src="Zebra.glb"
-    ios-src="Zebra.usdz"
-    alt="3D 模型"
+    src=""
+    ios-src=""
+    alt="選擇一個模型"
     auto-rotate
     camera-controls
     ar
@@ -83,6 +86,11 @@
   ></model-viewer>
 
   <script>
+    // 預設加載 Zebra 模型
+    window.addEventListener('DOMContentLoaded', () => {
+      loadModel('Zebra');
+    });
+
     function loadModel(name) {
       const viewer = document.getElementById("viewer");
       viewer.classList.remove("visible");
