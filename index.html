@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Eric 的網站</title>
+    <meta charset="UTF-8" />
+    <title>3D 模型展示</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      model-viewer {
+        width: 100%;
+        max-width: 600px;
+        height: 500px;
+      }
+    </style>
   </head>
   <body>
-    <h1>歡迎來到 Eric878787 的網站！</h1>
-    <p>這是我用 GitHub Pages 架的第一個網站 🎉</p>
+    <!-- 這裡換成你自己的模型路徑 -->
+    <model-viewer
+      src="model.glb"
+      alt="3D 模型"
+      auto-rotate
+      camera-controls
+      touch-action="pan-y"
+      ar
+    >
+    </model-viewer>
   </body>
 </html>
